@@ -14,31 +14,50 @@ span {
 }
 #gravestone {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #363a40;
     width: 450px;
     height: 600px;
-    margin: 5px auto;
+    margin: auto;
 	border: 2px solid black;
     border-radius: 190px 190px 0 0;
 }
 #stats {
-    padding-top: 75px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
 }
-#stats-lists {
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
     display: inline;
+    padding: 0 10px 0 10px; 
+    font-weight: bold; 
+}
+#screen {
+    background-color: rgb(139, 134, 134);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 375px;
+    height: 350px;
+    border: 2px solid black;
+    border-radius: 150px 150px 0 0;
 }
 .button-list {
     display: flex;
-    width: 400px;
-    align-items: flex-end;
     justify-content: space-evenly;
-    padding-bottom: 15px;
+    margin: auto;
+    width: 400px;
 }
 .buttons {
     display: flex;
     background-color: black;
     color: white;
-    /* text-shadow: 2px 2px 2px red; */
     border-radius: 50px 50px 0 0;
     padding-top: 40px;
     width: 75px;
