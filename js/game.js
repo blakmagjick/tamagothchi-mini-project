@@ -8,22 +8,25 @@ class Tamagothchi {
         this.alive = true;
         // this.time = 0
     }
-    // getHungry() {
-    //     this.hunger++
-
-    // }
-    // getSleepy(){
-    //     this.sleepness++
-
-    // }
-    // getBored(){
-    //     this.boredom++
-         
-    // }
+    getHungry() {
+        this.hunger++
+    }
+    getSleepy(){
+        this.sleepness++
+    }
+    getBored(){
+        this.boredom++    
+    }
 }
 
 const pet = new Tamagothchi('Stevie')
 console.log(pet)
+
+// Moving Skeleton
+movingAround = () => {
+    document.getElementById('skelly').style.paddingLeft = '50%'
+}
+// movingAround()
 
 // Feed Me Button //
 feedMePlz = () => {
