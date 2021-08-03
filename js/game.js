@@ -23,10 +23,22 @@ const pet = new Tamagothchi('Stevie')
 console.log(pet)
 
 // Moving Skeleton
+const movements = ['flex-start', 'flex-end', 'center']
 movingAround = () => {
-    document.getElementById('skelly').style.paddingLeft = '50%'
+    let randoMovement1 = Math.floor(Math.random() * movements.length)
+    let randoMovement2 = Math.floor(Math.random() * movements.length)
+    
+    let leftRight = document.querySelector('#skelly-container').style.justifyContent
+    console.log(leftRight)
+    let upDown = document.querySelector('#skelly-container').style.alignItems
+    console.log(upDown)
+    // leftRight = movements[randoMovement1]
+    // console.log(leftRight)
+    // upDown = movements[randoMovement2]
+    // console.log(upDown)
 }
-// movingAround()
+
+movingAround()
 
 // Feed Me Button //
 feedMePlz = () => {
