@@ -51,10 +51,25 @@ const gamePlay = {
     startAtTheBeginning(){
         const nameInput = document.getElementById('namevalue').value
         const petName = document.getElementById('hellothere')
-        petName.innerText = `Let's play ${nameInput}!`
+        petName.innerText = `${nameInput} is the perfect name for me! `
         const newPet = new Tamagothchi(nameInput);
         this.tamagothchi = newPet
         this.startGame()
+    },
+    hungerCount(){
+        setInterval(() => {
+
+        })
+    },
+    tiredCount(){
+        setInterval(() => {
+
+        })
+    },
+    boredCount(){
+        setInterval(() => {
+
+        })
     },
     startGame() {
         let hungerScore = document.querySelector('#hungerNum')
@@ -71,32 +86,31 @@ const gamePlay = {
     }, 1000)
     },
     feedMePlz() {
-        // let hungerScore1 = document.querySelector('#hungerNum')
-        // this.tamagothchi.hunger--
-        // hungerScore1.innerHTML = this.tamagothchi.hunger 
-        console.log('I\'m hungry yo!')
+        let hungerScore = document.querySelector('#hungerNum')
+        this.tamagothchi.hunger--
+        hungerScore.innerHTML = this.tamagothchi.hunger 
+        // console.log('I\'m hungry yo!')
     },
     sleepNowPlz() {
-        // let tiredScore1 = document.querySelector('#sleepyNum')
-        // this.tamagothchi.sleepness--
-        // tiredScore1.innerHTML = this.tamagothchi.sleepness
-        console.log('*yawns*')
+        let tiredScore1 = document.querySelector('#sleepyNum')
+        this.tamagothchi.sleepness--
+        tiredScore1.innerHTML = this.tamagothchi.sleepness
+        // console.log('*yawns*')
     },
     playWithMePlz() {
-        // let boredScore1 = document.querySelector('#boredNum')
-        // this.tamagothchi.boredom--
-        // boredScore1.innerHTML = this.tamagothchi.boredom
-        console.log('I\'m so bored!')
+        let boredScore1 = document.querySelector('#boredNum')
+        this.tamagothchi.boredom--
+        boredScore1.innerHTML = this.tamagothchi.boredom
+        // console.log('I\'m so bored!')
     }
 }
-// deathBecomesHer()
 
 // ButtonListeners
 const feedMe = document.querySelector('#feedme')
-feedMe.addEventListener('click', gamePlay.feedMePlz)
+feedMe.addEventListener('click', () => gamePlay.feedMePlz())
 
 const sleepNow = document.querySelector('#sleepnow')
-sleepNow.addEventListener('click', gamePlay.sleepNowPlz)
+sleepNow.addEventListener('click', () => gamePlay.sleepNowPlz())
 
 const playThing = document.querySelector('#plaything')
-playThing.addEventListener('click', gamePlay.playWithMePlz)
+playThing.addEventListener('click', () => gamePlay.playWithMePlz())
