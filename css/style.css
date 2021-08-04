@@ -12,6 +12,17 @@ h1 {
 span {
     text-decoration: underline;
 }
+#name-and-start {
+    text-align: center;
+}
+#nameme {
+    background-color: black;
+    color: white;
+}
+#name {
+    text-align: center;
+    font-family: 'Creepster', cursive;
+}
 #gravestone {
     display: flex;
     flex-direction: column;
