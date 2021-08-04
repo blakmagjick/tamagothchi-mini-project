@@ -8,15 +8,6 @@ class Tamagothchi {
         this.alive = true;
         this.time = 0
     }
-    getHungry() {
-        this.hunger++
-    }
-    getSleepy(){
-        this.sleepness++
-    }
-    getBored(){
-        this.boredom++    
-    }
 }
 
 const pet = new Tamagothchi('Stevie')
@@ -77,6 +68,10 @@ deathBecomesHer = () => {
 
 // Timer To Rule Them All //
 startGame = () => {
+    const nameInput = document.getElementById('namevalue').value
+    const name = document.getElementById('hellothere')
+    name.innerText = `Let's play ${nameInput}!`
+    console.log(name)
     setInterval(() => {
     pet.time+=2
     pet.hunger++
@@ -85,8 +80,6 @@ startGame = () => {
     tiredScore.innerHTML = pet.sleepness
     pet.boredom++
     boredScore.innerHTML = pet.boredom
-    
 }, 1000)
 }
-
-startGame()
+// startGame()
