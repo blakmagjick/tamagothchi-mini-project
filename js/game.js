@@ -50,6 +50,7 @@ const gamePlay = {
         hungerScore.innerHTML = this.tamagothchi.hunger
         if (this.tamagothchi.hunger >= 10){
             this.tamagothchi.alive = false
+            this.ohNoesYouDied()
         }
     },
     tiredCount(){
@@ -58,6 +59,7 @@ const gamePlay = {
         tiredScore.innerHTML = this.tamagothchi.sleepness
         if (this.tamagothchi.sleepness >= 10){
             this.tamagothchi.alive = false
+            this.ohNoesYouDied()
         }
     },
     boredCount(){
@@ -66,12 +68,14 @@ const gamePlay = {
         boredScore.innerHTML = this.tamagothchi.boredom
         if (this.tamagothchi.boredom >= 10){
             this.tamagothchi.alive = false
+            this.ohNoesYouDied()
         }
     },
     startGame() {
         this.startTimer()
     },
     startTimer() {
+        alert('Don\'t let any of the stat scores hit 10, or you die!!')
         this.counter = setInterval (() => {
             this.runningTime++
             this.tamagothchi.movingAround()
@@ -101,6 +105,10 @@ const gamePlay = {
             this.tamagothchi.age++
             ageCheck.innerHTML = this.tamagothchi.age
         }
+        if (this.tamagothchi.age == 10){
+            alert('You won!')
+            clearInterval(this.counter) 
+        }
     },
     feedMePlz() {
         let hungerScore = document.querySelector('#hungerNum')
@@ -118,13 +126,18 @@ const gamePlay = {
     sleepyTime() {  
         let nightTime = document.querySelector('#screen')
         nightTime.style.backgroundColor = 'black'
-        setTimeout(() => (nightTime.style.backgroundColor = '#807B7B'),2000)
+        setTimeout(() => (nightTime.style.backgroundColor = '#807B7B'),1000)
     },
     playWithMePlz() {
         let boredScore1 = document.querySelector('#boredNum')
         this.tamagothchi.boredom--
         boredScore1.innerHTML = this.tamagothchi.boredom
         // console.log('I\'m so bored!')
+    },
+    ohNoesYouDied(){
+        let skellySprite = document.querySelector('#skelly')
+        skellySprite.removeAttribute('src')
+        skellySprite.setAttribute('src', 'https://i.imgur.com/riAAz0p.png')
     }
 }
 
