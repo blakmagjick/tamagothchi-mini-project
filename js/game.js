@@ -42,7 +42,7 @@ const gamePlay = {
         petName.innerText = `I love the name ${nameInput}!`
         const newPet = new Tamagothchi(nameInput);
         this.tamagothchi = newPet
-        this.startGame()
+        this.startGameTimer()
     },
     hungerCount(){
         let hungerScore = document.querySelector('#hungerNum')
@@ -71,10 +71,7 @@ const gamePlay = {
             this.ohNoesYouDied()
         }
     },
-    startGame() {
-        this.startTimer()
-    },
-    startTimer() {
+    startGameTimer() {
         alert('Don\'t let any of the stat scores hit 10, or you die!!')
         this.counter = setInterval (() => {
             this.runningTime++
@@ -121,16 +118,19 @@ const gamePlay = {
     sleepNowPlz() {
         this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
-        if (this.tamagothchi.sleepness > 1) {
-        this.tamagothchi.sleepness--
+        if (this.tamagothchi.sleepness > 2) {
+        this.tamagothchi.sleepness-=2
         tiredScore1.innerHTML = this.tamagothchi.sleepness
+        } else if (this.tamagothchi.sleepness <= 2) {
+            this.tamagothchi.sleepness--
+            tiredScore1.innerHTML = this.tamagothchi.sleepness
         }
         // console.log('*yawns*')
     },
     sleepyTime() {  
         let nightTime = document.querySelector('#screen')
-        nightTime.style.backgroundColor = 'black'
-        setTimeout(() => (nightTime.style.backgroundColor = '#807B7B'),1000)
+        nightTime.style.backgroundImage = 'url("https://i.imgur.com/t1qzCrl.jpg")'
+        setTimeout(() => (nightTime.style.backgroundImage = ''), 1000)
     },
     playWithMePlz() {
         let boredScore1 = document.querySelector('#boredNum')
@@ -156,3 +156,8 @@ sleepNow.addEventListener('click', () => gamePlay.sleepNowPlz())
 
 const playThing = document.querySelector('#plaything')
 playThing.addEventListener('click', () => gamePlay.playWithMePlz())
+
+///THINGS TO DO
+
+// disable the buttons after the game ends so the stats can't keep going down
+// add a restart button
