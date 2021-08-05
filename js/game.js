@@ -6,40 +6,30 @@ class Tamagothchi {
         this.boredom = 1;
         this.age = 0;
         this.alive = true;
-        this.agingTime = 0
     }
     movingAround(){
         const movements = ['flex-start', 'flex-end', 'center']
         let randoMovement1 = Math.floor(Math.random() * movements.length)
         let randoMovement2 = Math.floor(Math.random() * movements.length)
-        if (this.agingTime % 2000 === 0) {
         let leftRight = document.querySelector('#skelly-container')
         let upDown = document.querySelector('#skelly-container')
         leftRight.style.justifyContent = movements[randoMovement1]
         upDown.style.alignItems = movements[randoMovement2]
-        }
     }
-    closerToDeath(){
-        if (this.agingTime % 5000 === 0){
-            this.age++
-        }
-    }
-    glowUp(){
-        if (this.age >= 10){
-            let skellySprite = document.querySelector('#skelly')
-            skellySprite.style.height = '100px'
-        }
+    glowUp() {
+        let skellySprite = document.querySelector('#skelly')
+        skellySprite.style.height = '125px'
     }
     deathBecomesHer() {
         if (this.hunger >= 10) {
-            alert('Oh bones, you starved to death!')
-            // console.log('Oh bones, you starved to death!')
+            console.log('Oh bones, you starved to death!')
+            return 
         } else if (this.sleepness >= 10) {
-            alert('Oh bones, you were so tired you died!')
-            // console.log('Oh bones, you were so tired you died!')
+            console.log('Oh bones, you were so tired you died!')
+            return 
         } else if (this.boredom >= 10) {
-            alert('Oh bones, you died of boredom!')
-            // console.log('Oh bones, you died of boredom!')
+            console.log('Oh bones, you died of boredom!')
+            return 
         }
     }
 }
@@ -57,33 +47,49 @@ const gamePlay = {
         this.startGame()
     },
     hungerCount(){
-        setInterval(() => {
-
-        })
-    },
-    tiredCount(){
-        setInterval(() => {
-
-        })
-    },
-    boredCount(){
-        setInterval(() => {
-
-        })
-    },
-    startGame() {
         let hungerScore = document.querySelector('#hungerNum')
-        let tiredScore = document.querySelector('#sleepyNum')
-        let boredScore = document.querySelector('#boredNum')
         setInterval(() => {
-        this.runningTime++
         this.tamagothchi.hunger++
         hungerScore.innerHTML = this.tamagothchi.hunger
+        }, 1000)
+    },
+    tiredCount(){
+        let tiredScore = document.querySelector('#sleepyNum')
+        setInterval(() => {
         this.tamagothchi.sleepness++
         tiredScore.innerHTML = this.tamagothchi.sleepness
+        }, 1000)
+    },
+    boredCount(){
+        let boredScore = document.querySelector('#boredNum')
+        setInterval(() => {
         this.tamagothchi.boredom++
         boredScore.innerHTML = this.tamagothchi.boredom
+        }, 1000)
+    },
+    startGame() {
+        setInterval(() => {
+        this.runningTime++
+        this.tamagothchi.movingAround()
+        this.morphing()
+        this.aging()
+        this.tamagothchi.deathBecomesHer()
     }, 1000)
+        this.hungerCount()
+        this.tiredCount()
+        this.boredCount()
+    },
+    morphing() {
+        if (this.runningTime >= 10){
+             this.tamagothchi.glowUp()
+        }
+    },
+    aging(){
+        let ageCheck = document.querySelector('#ageNum')
+        if (this.runningTime % 10 === 0){
+            this.tamagothchi.age++
+            ageCheck.innerHTML = this.tamagothchi.age
+        }
     },
     feedMePlz() {
         let hungerScore = document.querySelector('#hungerNum')
