@@ -1,11 +1,11 @@
 class Tamagothchi {
     constructor(name) {
         this.name = name;
+        this.alive = true;
         this.hunger = 1;
         this.sleepness = 1;
         this.boredom = 1;
         this.age = 0;
-        this.alive = true;
     }
     movingAround(){
         const movements = ['flex-start', 'flex-end', 'center']
@@ -23,13 +23,10 @@ class Tamagothchi {
     deathBecomesHer() {
         if (this.hunger >= 10) {
             console.log('Oh bones, you starved to death!')
-            return 
         } else if (this.sleepness >= 10) {
             console.log('Oh bones, you were so tired you died!')
-            return 
         } else if (this.boredom >= 10) {
             console.log('Oh bones, you died of boredom!')
-            return 
         }
     }
 }
@@ -37,6 +34,7 @@ class Tamagothchi {
 const gamePlay = {
     tamagothchi: null,
     runningTime: null,
+    counter: null,
 
     startAtTheBeginning(){
         const nameInput = document.getElementById('namevalue').value
@@ -48,43 +46,56 @@ const gamePlay = {
     },
     hungerCount(){
         let hungerScore = document.querySelector('#hungerNum')
-        setInterval(() => {
         this.tamagothchi.hunger++
         hungerScore.innerHTML = this.tamagothchi.hunger
-        }, 1000)
+        if (this.tamagothchi.hunger >= 10){
+            this.tamagothchi.alive = false
+        }
     },
     tiredCount(){
         let tiredScore = document.querySelector('#sleepyNum')
-        setInterval(() => {
         this.tamagothchi.sleepness++
         tiredScore.innerHTML = this.tamagothchi.sleepness
-        }, 1000)
+        if (this.tamagothchi.sleepness >= 10){
+            this.tamagothchi.alive = false
+        }
     },
     boredCount(){
         let boredScore = document.querySelector('#boredNum')
-        setInterval(() => {
         this.tamagothchi.boredom++
         boredScore.innerHTML = this.tamagothchi.boredom
-        }, 1000)
+        if (this.tamagothchi.boredom >= 10){
+            this.tamagothchi.alive = false
+        }
     },
     startGame() {
-        setInterval(() => {
-        this.runningTime++
-        this.tamagothchi.movingAround()
-        this.morphing()
-        this.aging()
-        this.tamagothchi.deathBecomesHer()
-    }, 1000)
-        this.hungerCount()
-        this.tiredCount()
-        this.boredCount()
+        this.startTimer()
+    },
+    startTimer() {
+        this.counter = setInterval (() => {
+            this.runningTime++
+            this.tamagothchi.movingAround()
+            this.morphing()
+            this.aging()
+            this.hungerCount()
+            if (this.runningTime % 2 == 0){
+                this.tiredCount()
+            } 
+            if (this.runningTime % 3 == 0){
+                this.boredCount()
+            }
+            if (this.tamagothchi.alive == false) {
+                clearInterval(this.counter) 
+                this.tamagothchi.deathBecomesHer()
+             }
+        }, 1000)
     },
     morphing() {
-        if (this.runningTime >= 10){
+        if (this.runningTime == 10){
              this.tamagothchi.glowUp()
         }
     },
-    aging(){
+    aging() {
         let ageCheck = document.querySelector('#ageNum')
         if (this.runningTime % 10 === 0){
             this.tamagothchi.age++
@@ -98,10 +109,16 @@ const gamePlay = {
         // console.log('I\'m hungry yo!')
     },
     sleepNowPlz() {
+        this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
         this.tamagothchi.sleepness--
         tiredScore1.innerHTML = this.tamagothchi.sleepness
         // console.log('*yawns*')
+    },
+    sleepyTime() {  
+        let nightTime = document.querySelector('#screen')
+        nightTime.style.backgroundColor = 'black'
+        setTimeout(() => (nightTime.style.backgroundColor = '#807B7B'),2000)
     },
     playWithMePlz() {
         let boredScore1 = document.querySelector('#boredNum')

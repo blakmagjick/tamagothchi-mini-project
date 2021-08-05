@@ -50,7 +50,7 @@ li {
     font-weight: bold; 
 }
 #screen {
-    background-color: rgb(139, 134, 134);
+    background-color: #807B7B;
     display: flex;
     justify-content: center;
     margin: auto;
