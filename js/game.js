@@ -39,7 +39,7 @@ const gamePlay = {
     startAtTheBeginning(){
         const nameInput = document.getElementById('namevalue').value
         const petName = document.getElementById('hellothere')
-        petName.innerText = `${nameInput} is the perfect name for me! `
+        petName.innerText = `I love the name ${nameInput}!`
         const newPet = new Tamagothchi(nameInput);
         this.tamagothchi = newPet
         this.startGame()
@@ -112,15 +112,19 @@ const gamePlay = {
     },
     feedMePlz() {
         let hungerScore = document.querySelector('#hungerNum')
+        if (this.tamagothchi.hunger > 1) {
         this.tamagothchi.hunger--
         hungerScore.innerHTML = this.tamagothchi.hunger 
+        }
         // console.log('I\'m hungry yo!')
     },
     sleepNowPlz() {
         this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
+        if (this.tamagothchi.sleepness > 1) {
         this.tamagothchi.sleepness--
         tiredScore1.innerHTML = this.tamagothchi.sleepness
+        }
         // console.log('*yawns*')
     },
     sleepyTime() {  
@@ -130,8 +134,10 @@ const gamePlay = {
     },
     playWithMePlz() {
         let boredScore1 = document.querySelector('#boredNum')
+        if (this.tamagothchi.boredom > 1) {
         this.tamagothchi.boredom--
         boredScore1.innerHTML = this.tamagothchi.boredom
+        }
         // console.log('I\'m so bored!')
     },
     ohNoesYouDied(){

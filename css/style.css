@@ -21,7 +21,8 @@ span {
 }
 #name {
     text-align: center;
-    font-family: 'Creepster', cursive;
+    font-family: 'Eater', cursive;
+    font-size: 13px;
 }
 #gravestone {
     display: flex;
