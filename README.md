@@ -23,10 +23,11 @@ This was Project Zero for Unit 1 of my General Assembly Software Engineering Imm
 
 #### Here is additional functionality included, along with the above
 - Added prompt when game started to explain basic game rules
-- Restart button
-- Function to disable buttons after pet dies to make sure the stats decrease if pushed after pet's death
+- Restart button so people don't have to refresh the page manually to play again
+- Function to disable buttons after pet dies to make sure the stats don't decrease if pushed after pet's death
 - A message comes up telling the user the reason the pet died
 - Added sound effects to the buttons
+- Added sound effects for when the sprite grows, and when it dies. 
 
 ---
 
