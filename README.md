@@ -26,11 +26,11 @@ This was Project Zero for Unit 1 of my General Assembly Software Engineering Imm
 - Restart button
 - Function to disable buttons after pet dies to make sure the stats decrease if pushed after pet's death
 - A message comes up telling the user the reason the pet died
+- Added sound effects to the buttons
 
 ---
 
 #### Here is a list of the functionality I wanted to add, but didn't get around to before the class presentation
 - Add an animated bone when the Let's Play button is pushed
-- Add sound effects to the buttons
 - Include an exercise function that affected all of the stats at one time
 - Give option to pick between three different sprites
