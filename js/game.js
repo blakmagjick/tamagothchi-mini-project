@@ -89,6 +89,7 @@ const gamePlay = {
             if (this.tamagothchi.alive == false) {
                 clearInterval(this.counter) 
                 this.tamagothchi.deathBecomesHer()
+                this.stopButtons()
              }
         }, 1000)
     },
@@ -145,6 +146,11 @@ const gamePlay = {
         let skellySprite = document.querySelector('#skelly')
         skellySprite.removeAttribute('src')
         skellySprite.setAttribute('src', 'https://i.imgur.com/riAAz0p.png')
+    },
+    stopButtons() {
+        feedMe.setAttribute('disabled', 'true')
+        sleepNow.setAttribute('disabled', 'true')
+        playThing.setAttribute('disabled', 'true')
     }
 }
 
@@ -160,5 +166,4 @@ playThing.addEventListener('click', () => gamePlay.playWithMePlz())
 
 ///THINGS TO DO
 
-// disable the buttons after the game ends so the stats can't keep going down
 // add bones thrown for Let's Play?
