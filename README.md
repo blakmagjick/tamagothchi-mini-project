@@ -5,6 +5,8 @@
 ### Reason for making the game
 This was Project Zero for Unit 1 of my General Assembly Software Engineering Immersive program
 
+<img src='Screenshot of Game.png' height='500'>
+
 #### Here were the requirements
 - Create a repo
 - Create a Tamagotchi Class
@@ -20,6 +22,7 @@ This was Project Zero for Unit 1 of my General Assembly Software Engineering Imm
 - The pet should die if hunger, sleepiness or boredom hits 10
 
 #### Here is additional functionality included, along with the above
+- Added prompt when game started to explain basic game rules
 - Restart button
 - Function to disable buttons after pet dies to make sure the stats decrease if pushed after pet's death
 - A message comes up telling the user the reason the pet died
