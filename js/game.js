@@ -110,6 +110,7 @@ const gamePlay = {
         }
     },
     feedMePlz() {
+        this.eatSound()
         let hungerScore = document.querySelector('#hungerNum')
         if (this.tamagothchi.hunger > 1) {
         this.tamagothchi.hunger--
@@ -118,6 +119,7 @@ const gamePlay = {
         // console.log('I\'m hungry yo!')
     },
     sleepNowPlz() {
+        this.sleepSound()
         this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
         if (this.tamagothchi.sleepness > 2) {
@@ -135,6 +137,7 @@ const gamePlay = {
         setTimeout(() => (nightTime.style.backgroundImage = ''), 1000)
     },
     playWithMePlz() {
+        this.playSound()
         let boredScore1 = document.querySelector('#boredNum')
         if (this.tamagothchi.boredom > 1) {
         this.tamagothchi.boredom--
@@ -151,6 +154,18 @@ const gamePlay = {
         feedMe.setAttribute('disabled', 'true')
         sleepNow.setAttribute('disabled', 'true')
         playThing.setAttribute('disabled', 'true')
+    },
+    eatSound(){
+        const audio = new Audio('crunch.mp3');
+        audio.play();
+    },
+    sleepSound(){
+        const audio = new Audio('snore.mp3');
+        audio.play();
+    },
+    playSound(){
+        const audio = new Audio('play.mp3');
+        audio.play();
     }
 }
 
@@ -163,7 +178,3 @@ sleepNow.addEventListener('click', () => gamePlay.sleepNowPlz())
 
 const playThing = document.querySelector('#plaything')
 playThing.addEventListener('click', () => gamePlay.playWithMePlz())
-
-///THINGS TO DO
-
-// add bones thrown for Let's Play?
