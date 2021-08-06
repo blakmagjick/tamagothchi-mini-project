@@ -96,6 +96,7 @@ const gamePlay = {
     morphing() {
         if (this.runningTime == 10){
              this.tamagothchi.glowUp()
+             this.getBigger()
         }
     },
     aging() {
@@ -149,12 +150,14 @@ const gamePlay = {
         let skellySprite = document.querySelector('#skelly')
         skellySprite.removeAttribute('src')
         skellySprite.setAttribute('src', 'https://i.imgur.com/riAAz0p.png')
+        this.gameOver()
     },
     stopButtons() {
         feedMe.setAttribute('disabled', 'true')
         sleepNow.setAttribute('disabled', 'true')
         playThing.setAttribute('disabled', 'true')
     },
+//// SOUND EFFECTS ////
     eatSound(){
         const audio = new Audio('crunch.mp3');
         audio.play();
@@ -165,6 +168,14 @@ const gamePlay = {
     },
     playSound(){
         const audio = new Audio('play.mp3');
+        audio.play();
+    },
+    getBigger(){
+        const audio = new Audio('grow.mp3');
+        audio.play();
+    },
+    gameOver(){
+        const audio = new Audio('game-over.mp3');
         audio.play();
     }
 }
