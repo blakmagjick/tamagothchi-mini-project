@@ -1,6 +1,6 @@
-/* * {
+* {
     border: 1px solid white;  
-} */
+}
 body {
     background-image: url("https://i.imgur.com/iWysmYr.jpg");
     background-color: grey;
@@ -10,7 +10,7 @@ body {
 h1 {
     text-align: center;
     font-family: 'Creepster', cursive;
-    font-size: 3em;
+    font-size: 2em;
 }
 span {
     text-decoration: underline;
@@ -33,7 +33,7 @@ span {
     justify-content: center;
     background-color: #363a40;
     width: 450px;
-    height: 600px;
+    height: 550px;
     margin: auto;
 	border: 2px solid black;
     border-radius: 190px 190px 0 0;
@@ -41,7 +41,7 @@ span {
 #stats {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 ul {
     list-style-type: none;
@@ -74,18 +74,25 @@ li {
 #skelly {
     height: 70px;
 }
+#why-died {
+    text-align: center;
+    font-family: 'Eater', cursive;
+    height: 25px;
+    padding-bottom: 5px;
+}
 .button-list {
     display: flex;
     justify-content: space-evenly;
-    margin: auto;
+    margin: 0 auto;
     width: 400px;
 }
 .buttons {
     display: flex;
     background-color: black;
     color: white;
+    font-family: 'Eater', cursive;
     border-radius: 50px 50px 0 0;
-    padding-top: 40px;
+    padding-top: 15px;
     width: 75px;
-    height: 100px;
+    height: 80px;
 }

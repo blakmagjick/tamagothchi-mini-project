@@ -14,6 +14,7 @@
         </header>
         <div id='name-and-start'>
             <input type='Text' id='namevalue'><button type='button' id='nameme' onclick='gamePlay.startAtTheBeginning()'>Name Me To Start</button>
+            <button id='nameme' class='restart' onclick="location.reload();">Restart</button>
         </div>
         <div id='name'><h2 id='hellothere'>Oh hai there!</h2></div>
         <div id='gravestone' class='container'>
@@ -30,6 +31,7 @@
                     <li class='stats' id='age'>Age: <span id="ageNum">0</span></li>
                 </ul>
             </div>
+            <div id='why-died'></div>
             <div class='button-list'>
                 <button type='button' class='buttons' id='feedme'>Feed Me</button>
                 <button type='button' class='buttons' id='sleepnow'>Sleepy Time</button>

@@ -21,12 +21,13 @@ class Tamagothchi {
         skellySprite.style.height = '125px'
     }
     deathBecomesHer() {
+        let whyDied = document.querySelector('#why-died')
         if (this.hunger >= 10) {
-            console.log('Oh bones, you starved to death!')
+            whyDied.innerHTML = 'Oh bones, you starved to death!'
         } else if (this.sleepness >= 10) {
-            console.log('Oh bones, you were so tired you died!')
+            whyDied.innerHTML = 'Oh bones, you were so tired you died!'
         } else if (this.boredom >= 10) {
-            console.log('Oh bones, you died of boredom!')
+            whyDied.innerHTML = 'Oh bones, you died of boredom!'
         }
     }
 }
@@ -160,4 +161,4 @@ playThing.addEventListener('click', () => gamePlay.playWithMePlz())
 ///THINGS TO DO
 
 // disable the buttons after the game ends so the stats can't keep going down
-// add a restart button
+// add bones thrown for Let's Play?
