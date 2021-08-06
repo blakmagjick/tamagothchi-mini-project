@@ -1,4 +1,6 @@
-## tamagothchi-mini-project
+# tamagothchi-mini-project
+
+### Game link: https://blakmagjick.github.io/tamagothchi-mini-project/
 
 ### Reason for making the game
 This was Project Zero for Unit 1 of my General Assembly Software Engineering Immersive program
@@ -17,12 +19,15 @@ This was Project Zero for Unit 1 of my General Assembly Software Engineering Imm
 - Have the pet's age go up, and morph at certain ages
 - The pet should die if hunger, sleepiness or boredom hits 10
 
-#### Here is additional functionality included along with the above
+#### Here is additional functionality included, along with the above
 - Restart button
 - Function to disable buttons after pet dies to make sure the stats decrease if pushed after pet's death
 - A message comes up telling the user the reason the pet died
 
-##### Here is a list of the functionality I wanted to add, but didn't get around to before the class presentation
+---
+
+#### Here is a list of the functionality I wanted to add, but didn't get around to before the class presentation
 - Add an animated bone when the Let's Play button is pushed
 - Add sound effects to the buttons
 - Include an exercise function that affected all of the stats at one time
+- Give option to pick between three different sprites
