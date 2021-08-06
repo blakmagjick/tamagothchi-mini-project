@@ -124,11 +124,8 @@ const gamePlay = {
         this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
         if (this.tamagothchi.sleepness > 2) {
-        this.tamagothchi.sleepness-=2
+        this.tamagothchi.sleepness--
         tiredScore1.innerHTML = this.tamagothchi.sleepness
-        } else if (this.tamagothchi.sleepness <= 2) {
-            this.tamagothchi.sleepness--
-            tiredScore1.innerHTML = this.tamagothchi.sleepness
         }
         // console.log('*yawns*')
     },
