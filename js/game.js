@@ -123,7 +123,7 @@ const gamePlay = {
         this.sleepSound()
         this.sleepyTime()
         let tiredScore1 = document.querySelector('#sleepyNum')
-        if (this.tamagothchi.sleepness > 2) {
+        if (this.tamagothchi.sleepness > 1) {
         this.tamagothchi.sleepness--
         tiredScore1.innerHTML = this.tamagothchi.sleepness
         }
